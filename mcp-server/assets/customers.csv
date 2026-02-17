@@ -1,0 +1,11 @@
+id,first_name,last_name,email,phone,ssn,credit_card,dob,address
+1,Alice,Johnson,alice.johnson@acme.com,555-0101,123-45-6789,4111111111111111,1985-03-22,"123 Oak St, Springfield, IL 62701"
+2,Bob,Martinez,bob.martinez@acme.com,555-0102,234-56-7890,5500005555555559,1979-07-14,"456 Maple Ave, Chicago, IL 60601"
+3,Carol,Williams,carol.w@acme.com,555-0103,345-67-8901,340000000000009,1992-11-30,"789 Pine Rd, Naperville, IL 60540"
+4,David,Chen,d.chen@acme.com,555-0104,456-78-9012,6011111111111117,1988-05-18,"321 Elm Dr, Aurora, IL 60505"
+5,Emma,Thompson,emma.t@acme.com,555-0105,567-89-0123,4012888888881881,1995-09-03,"654 Cedar Ln, Rockford, IL 61101"
+6,Frank,Davis,f.davis@acme.com,555-0106,678-90-1234,4222222222222,1973-01-25,"987 Birch Blvd, Peoria, IL 61602"
+7,Grace,Lee,grace.lee@acme.com,555-0107,789-01-2345,5105105105105100,1990-06-12,"147 Walnut Way, Elgin, IL 60120"
+8,Henry,Wilson,h.wilson@acme.com,555-0108,890-12-3456,4111111111111111,1982-12-07,"258 Ash Ct, Waukegan, IL 60085"
+9,Iris,Brown,iris.b@acme.com,555-0109,901-23-4567,5431111111111111,1997-04-19,"369 Hickory Pl, Cicero, IL 60804"
+10,Jack,Taylor,j.taylor@acme.com,555-0110,012-34-5678,4916338506082832,1986-08-28,"741 Poplar St, Champaign, IL 61820"

@@ -1,0 +1,11 @@
+node_modules/
+__pycache__/
+*.pyc
+.env
+!mcp-server/assets/.env
+agent/venv/
+backend/.runtime-config.json
+web/dist/
+*.log
+.DS_Store
+Thumbs.db

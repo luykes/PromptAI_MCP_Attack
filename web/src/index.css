@@ -1,0 +1,77 @@
+:root {
+  --bg-base: #0d0014;
+  --bg-panel: #150022;
+  --bg-card: #1e0035;
+  --bg-input: #2a0050;
+  --accent: #7b2fff;
+  --accent-bright: #a855f7;
+  --accent-glow: rgba(123, 47, 255, 0.3);
+  --accent-dim: #4a1a99;
+  --text-primary: #e8d5ff;
+  --text-secondary: #9d7dbf;
+  --text-muted: #6b4f8a;
+  --border: #2d1050;
+  --border-accent: #5b21b6;
+
+  --color-blocked: #ff4444;
+  --color-blocked-bg: rgba(255, 68, 68, 0.1);
+  --color-allowed: #44ff88;
+  --color-allowed-bg: rgba(68, 255, 136, 0.1);
+  --color-detected: #ffaa44;
+  --color-detected-bg: rgba(255, 170, 68, 0.1);
+  --color-tool-call: #44aaff;
+  --color-tool-call-bg: rgba(68, 170, 255, 0.08);
+  --color-system: #9d7dbf;
+  --color-init: #c084fc;
+  --color-done: #a855f7;
+
+  --vulnerable-accent: #ff4444;
+  --vulnerable-glow: rgba(255, 68, 68, 0.2);
+  --protected-accent: #44ff88;
+  --protected-glow: rgba(68, 255, 136, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+code, pre, .mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-dim);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+input, select, textarea {
+  font-family: 'Inter', sans-serif;
+}

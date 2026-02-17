@@ -1,0 +1,18 @@
+{
+  "name": "promptai-homebrew-server",
+  "version": "1.0.0",
+  "description": "PromptAI Security Demo — deliberately vulnerable MCP server with Prompt Security integration",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && cd backend && npm install && cd ../web && npm install && cd ../mcp-server && npm install",
+    "dev": "concurrently --kill-others --names \"MCP-RAW,MCP-SAFE,BACKEND,WEB\" --prefix-colors \"blue,cyan,yellow,green\" \"cross-env SECURITY_ENABLED=false PORT=8787 node mcp-server/server.js\" \"cross-env SECURITY_ENABLED=true PORT=8788 node mcp-server/server.js\" \"node backend/index.js\" \"cd web && npm run dev\"",
+    "dev:backend": "node backend/index.js",
+    "dev:web": "cd web && npm run dev",
+    "dev:mcp-raw": "cross-env SECURITY_ENABLED=false PORT=8787 node mcp-server/server.js",
+    "dev:mcp-safe": "cross-env SECURITY_ENABLED=true PORT=8788 node mcp-server/server.js"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3"
+  }
+}
