@@ -62,7 +62,7 @@ Real-time telemetry streams from backend → browser over **Server-Sent Events (
 | Python | 3.10+ | For the attack agent |
 | Ollama | Latest | Local LLM runtime |
 | llama3.2 model | — | ~2 GB download via `ollama pull llama3.2` |
-| Prompt Security API key | Optional | Required for right-pane blocking — enter in the UI |
+| Prompt Security API key | Required for right-pane blocking — enter in the UI |
 
 ---
 
@@ -299,25 +299,13 @@ Open your browser: **http://localhost:5173**
 
 1. Open **http://localhost:5173**
 2. The dashboard shows two side-by-side telemetry panes — **Vulnerable** (left) and **Protected** (right)
-3. *(Optional)* Click **⚙ Config** in the top bar → enter your Prompt Security API key → Save
+3. Click **⚙ Config** in the top bar → enter your Prompt Security API key → and Username you using in PromptAI → Save
 4. Click **Launch All 6 Attacks**
 5. Watch both panes in real time:
    - **Left:** Each attack executes — secrets, PII, and shell output are visible
    - **Right:** Each tool call is pre-scanned and blocked before execution, or the output is post-scanned and redacted
 
 Each attack has a clearly labeled heading (`⚡ Secret Exfiltration`, etc.) and numbered turns so you can follow exactly what's happening.
-
----
-
-## Optional: Prompt Security API Key
-
-Without an API key the demo still runs — but the protected pane won't actually call the Prompt Security cloud API (it defaults to "allow").
-
-To see real blocking:
-1. Get an API key from https://prompt.security
-2. In the web UI, click **⚙ Config**
-3. Paste your key and click **Save**
-4. The key is saved locally in `backend/.runtime-config.json` (gitignored — never committed)
 
 ---
 
