@@ -27,6 +27,8 @@ export default function TelemetryPane({ title, badge, badgeColor, streamUrl, isA
   const [logs, setLogs] = useState([]);
   const [connected, setConnected] = useState(false);
   const logEndRef = useRef(null);
+  const logContainerRef = useRef(null);
+  const isAtBottom = useRef(true);
   const esRef = useRef(null);
 
   const connect = useCallback(() => {
@@ -60,10 +62,18 @@ export default function TelemetryPane({ title, badge, badgeColor, streamUrl, isA
     return cleanup;
   }, [connect]);
 
-  // Auto-scroll to bottom
+  // Auto-scroll: only when user is already at the bottom
   useEffect(() => {
-    logEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (isAtBottom.current) {
+      logEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
   }, [logs]);
+
+  const handleScroll = useCallback(() => {
+    const el = logContainerRef.current;
+    if (!el) return;
+    isAtBottom.current = el.scrollHeight - el.scrollTop - el.clientHeight < 60;
+  }, []);
 
   const clearLogs = () => setLogs([]);
 
@@ -95,7 +105,7 @@ export default function TelemetryPane({ title, badge, badgeColor, streamUrl, isA
         </div>
       </div>
 
-      <div style={styles.logContainer}>
+      <div ref={logContainerRef} onScroll={handleScroll} style={styles.logContainer}>
         {logs.length === 0 && (
           <div style={styles.emptyState}>
             <div style={styles.emptyIcon}>⬡</div>
